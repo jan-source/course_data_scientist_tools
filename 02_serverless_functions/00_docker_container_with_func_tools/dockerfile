@@ -1,0 +1,34 @@
+
+
+# https://learn.microsoft.com/en-us/cli/azure/run-azure-cli-docker?view=azure-cli-latest
+# https://github.com/Azure/azure-functions-docker
+# https://hub.docker.com/r/microsoft/azure-functions-python
+
+#FROM --platform=linux/amd64 mcr.microsoft.com/azure-functions/python:4-python3.11
+#FROM python:3.11-slim
+FROM ubuntu:20.04
+
+RUN apt-get update && \
+    apt-get install -y npm nodejs && \
+    npm install -g azure-functions-core-tools@4 --unsafe-perm true
+
+# RUN apt-get update && \
+#     apt-get install -y curl && \
+#     apt-get update && \
+#     apt-get install -y azure-functions-core-tools-4 && \
+#     curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+
+# ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
+#     AzureFunctionsJobHost__Logging__Console__IsEnabled=true
+
+# Step 2: Create a new Azure Functions project
+#RUN func init MyFunctionApp --python
+
+# Step 3: Navigate into the project directory
+#RUN cd MyFunctionApp
+
+# Step 4: Create a new HTTP-triggered function
+#RUN func new --template "HTTP trigger" --name MyHttpTrigger
+
+# Step 5: Run the function locally
+CMD  ["/bin/bash"]

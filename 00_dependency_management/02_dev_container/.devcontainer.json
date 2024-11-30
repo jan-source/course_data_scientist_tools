@@ -1,0 +1,16 @@
+{
+    "image": "python:3.11-slim",
+  
+    "customizations": {
+      "vscode": {
+        "extensions": ["ms-python.python", "ms-vscode.vscode-node-azure-pack" ]
+      }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {
+            "version": "latest"
+        }
+  },
+    "forwardPorts": [8888]
+  }
+  

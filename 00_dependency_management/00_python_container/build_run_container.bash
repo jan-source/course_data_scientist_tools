@@ -13,7 +13,7 @@ docker ps
 docker ps -all
 
 # Run container and enter it interactively use standard entry point
-docker run -it python_container
+docker run -it python_container:latest
 
 # Run container and enter it interactively overwriting the entry point
 docker run -it python_container /bin/bash
