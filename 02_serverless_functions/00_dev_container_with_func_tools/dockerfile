@@ -1,5 +1,5 @@
 
-FROM --platform=linux/amd64 mcr.microsoft.com/azure-functions/python:4-python3.11
+FROM mcr.microsoft.com/azure-functions/python:4-python3.11
 
 
 RUN apt-get update && \
@@ -8,8 +8,7 @@ RUN apt-get update && \
     apt-get install -y azure-functions-core-tools-4 && \
     curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
-ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
-    AzureFunctionsJobHost__Logging__Console__IsEnabled=true
+ENV AzureFunctionsJobHost__Logging__Console__IsEnabled=true
 
 # Step 2: Create a new Azure Functions project
 #RUN func init MyFunctionApp --python
