@@ -10,14 +10,18 @@ RUN apt-get update && \
 
 ENV AzureFunctionsJobHost__Logging__Console__IsEnabled=true
 
-# Step 2: Create a new Azure Functions project
-#RUN func init MyFunctionApp --python
+
+# Import as otherwise point to wrong directory and function app will not be found
+ENV AzureWebJobsScriptRoot=""
+
+# Step 1: Create a new Azure Functions project
+RUN func init MyFunctionApp --python
 
 # Step 3: Navigate into the project directory
-#RUN cd MyFunctionApp
+RUN cd MyFunctionApp
 
 # Step 4: Create a new HTTP-triggered function
-#RUN func new --template "HTTP trigger" --name MyHttpTrigger
+RUN func new --template "HTTP trigger" --name MyHttpTrigger
 
 # Step 5: Run the function locally
 CMD  ["/bin/bash"]
