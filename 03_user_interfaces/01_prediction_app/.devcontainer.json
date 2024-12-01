@@ -1,0 +1,15 @@
+
+{
+  "build": {
+  // Path is relative to the devcontainer.json file.
+  "dockerfile": "dockerfile"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["vue.volar"]
+    }
+  },
+
+  "forwardPorts": [5173]
+}
